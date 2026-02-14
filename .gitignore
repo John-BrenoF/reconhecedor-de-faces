@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Ignorar banco de dados de imagens locais
+data/
+.env
+
+# Ambientes virtuais
+venv/
