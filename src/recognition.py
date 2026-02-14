@@ -8,7 +8,7 @@ class FaceRecognizer:
     def __init__(self):
         pass
 
-    def process_frame(self, frame, known_encodings, known_names):
+    def process_frame(self, frame, known_encodings, known_names, tolerance=0.6):
         """
         Processa o frame para encontrar faces e identificar nomes.
         Retorna uma lista de tuplas (top, right, bottom, left, name).
@@ -22,7 +22,7 @@ class FaceRecognizer:
 
         results = []
         for face_encoding, location in zip(face_encodings, face_locations):
-            matches = face_recognition.compare_faces(known_encodings, face_encoding)
+            matches = face_recognition.compare_faces(known_encodings, face_encoding, tolerance=tolerance)
             name = "Desconhecido"
 
             face_distances = face_recognition.face_distance(known_encodings, face_encoding)

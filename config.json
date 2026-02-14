@@ -1,0 +1,10 @@
+{
+    "mode": "vigilancia",
+    "rec_interval": 1.2,
+    "tolerance": 1.0,
+    "brightness": 27,
+    "filter_id": 0,
+    "take_photo": 0,
+    "record_video": 0,
+    "reload_faces": false
+}

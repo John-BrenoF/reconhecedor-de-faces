@@ -32,7 +32,7 @@ Projeto pessoal para um reconhecedor de rostos modular em Python, utilizando Ope
     *Nota: A biblioteca `face_recognition` requer `dlib`.*
     *   **Windows**: Pode ser necessário instalar o CMake e Visual Studio C++ Build Tools.
     *   **Linux (Debian/Ubuntu)**: `sudo apt-get install cmake build-essential`
-    *   **Linux (Arch/Manjaro)**: `sudo pacman -S cmake base-devel`
+    *   **Linux (Arch/Manjaro)**: `sudo pacman -S cmake base-devel gobject-introspection gtk3`
 
 ## Uso
 

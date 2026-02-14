@@ -8,3 +8,7 @@ data/
 
 # Ambientes virtuais
 venv/
+
+# Logs e CSVs
+*.log
+*.csv
