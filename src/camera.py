@@ -32,3 +32,26 @@ class CameraManager:
         """Desenha o retângulo e o nome no frame."""
         cv2.rectangle(frame, (left, top), (right, bottom), color, 2)
         cv2.putText(frame, text, (left, bottom + 20), cv2.FONT_HERSHEY_DUPLEX, 0.6, (255, 255, 255), 1)
+
+    def set_brightness(self, value):
+        """Define o brilho da câmera (geralmente entre 0 e 255, ou 0.0 e 1.0 dependendo da câmera)."""
+        self.cap.set(cv2.CAP_PROP_BRIGHTNESS, value)
+
+    def setup_window(self, window_name):
+        """Cria a janela explicitamente para permitir configurações de callback."""
+        cv2.namedWindow(window_name)
+
+    def set_mouse_callback(self, window_name, callback):
+        """Define a função que será chamada quando houver cliques do mouse."""
+        cv2.setMouseCallback(window_name, callback)
+
+    def draw_button(self, frame, text, x, y, w, h, color):
+        """Desenha um botão interativo na tela."""
+        cv2.rectangle(frame, (x, y), (x + w, y + h), color, -1)
+        cv2.putText(frame, text, (x + 10, y + 25), cv2.FONT_HERSHEY_DUPLEX, 0.6, (0, 0, 0), 1)
+
+    def draw_text_input(self, frame, text, x, y, w, h):
+        """Desenha uma caixa de texto para entrada de dados."""
+        cv2.rectangle(frame, (x, y), (x + w, y + h), (255, 255, 255), -1)
+        cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 0, 0), 2)
+        cv2.putText(frame, text, (x + 10, y + 35), cv2.FONT_HERSHEY_DUPLEX, 0.7, (0, 0, 0), 1)
